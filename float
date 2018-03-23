@@ -1,29 +1,54 @@
 meta:
   id: ftview_floatlog
   title: FTView Float Log Format
-  application: FTView/RSView32
+  application: FTView/RSView32(Rockwell Automation)
   file-extension: DAT
   encoding: ASCII
   endian: le
 seq:
   id: table_header
-  type: str
-  len: 32
+  type: table_header_t
+  id: row
+  type: float_row_t  
 types:
-  float_row:
+  table_header_t:
+    seq:
+      id: u1
+      type: s4
+      id: num_rows
+      type: u4
+      id: u2
+      type: str
+      len: 280
+  float_row_t:
     seq:
       id: date
+      doc: "YYYY-MM-DD"
       type: str
-      len: 8
+      len: 9
       id: time
+      doc: "HH-MM-SS"
       type: str
       len:8
       id: millitm
       type: str
+      doc: "DDD"
       len: 3
       id: tagindex
       type: str
+      doc: "DDDDD"
       len: 5
+      id: value
+      type: f8
+      id: status
+      type: str
+      len: 1
+      id: marker
+      type: str
+      len: 1
+      id: internal
+      type: s8
+      
       
       
   
