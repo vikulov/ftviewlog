@@ -47,7 +47,7 @@ types:
       type: str
       len: 1
       id: internal
-      type: s8
+      type: s4
       
       
       
