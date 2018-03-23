@@ -1,0 +1,29 @@
+meta:
+  id: ftview_floatlog
+  title: FTView Float Log Format
+  application: FTView/RSView32
+  file-extension: DAT
+  encoding: ASCII
+  endian: le
+seq:
+  id: table_header
+  type: str
+  len: 32
+types:
+  float_row:
+    seq:
+      id: date
+      type: str
+      len: 8
+      id: time
+      type: str
+      len:8
+      id: millitm
+      type: str
+      len: 3
+      id: tagindex
+      type: str
+      len: 5
+      
+      
+  
