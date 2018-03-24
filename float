@@ -29,11 +29,8 @@ types:
         type: u2
       - id: record_size
         type: u2
-      - id: blank
-        contents: [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-      - id: columns
-        type: str
-        size: 257
+      - id: skipped
+        size: header_size - 12
   float_row_t:
     seq:
       - id: date
