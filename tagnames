@@ -1,0 +1,47 @@
+meta:
+  id: ftview_tagnameslog
+  title: FTView TagNames Log Format
+  application: FTView/RSView32(Rockwell Automation)
+  file-extension: DAT
+  encoding: ASCII
+  endian: le
+seq:
+  - id: header
+    type: table_header_t
+  - id: rows
+    type: tagname_row_t
+    repeat: expr
+    repeat-expr: header.num_records
+types:
+  table_header_t:
+    seq:
+      - id: version
+        contents: [0x03]
+      - id: last_update_year
+        type: u1
+      - id: last_update_month
+        type: u1
+      - id: last_update_day
+        type: u1
+      - id: num_records
+        type: u4
+      - id: header_size
+        type: u2
+      - id: record_size
+        type: u2
+      - id: skipped
+        size: header_size - 12
+  tagname_row_t:
+    seq:
+      - id: tagname
+        type: str
+        size: 256
+      - id: tagindex
+        type: str
+        size: 5
+      - id: tagtype
+        type: str
+        size: 1
+      - id: datatype
+        type: str
+        size: 2
