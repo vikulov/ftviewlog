@@ -33,36 +33,33 @@ types:
         contents: [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
       - id: columns
         type: str
-        len: 257
+        size: 257
   float_row_t:
     seq:
       - id: date
         doc: " YYYY-MM-DD"
         type: str
-        len: 9
+        size: 9
       - id: time
         doc: "HH-MM-SS"
         type: str
-        len: 8
+        size: 8
       - id: millitm
         type: str
         doc: "DDD"
-        len: 3
+        size: 3
       - id: tagindex
         type: str
         doc: "DDDDD"
-        len: 5
+        size: 5
       - id: value
         type: f8
       - id: status
         type: str
-        len: 1
+        size: 1
       - id: marker
         type: str
-        len: 1
+        size: 1
       - id: internal
         type: s4
       
-      
-      
-  
